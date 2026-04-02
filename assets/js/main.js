@@ -74,6 +74,12 @@ function openPayModal(productId) {
   modal.querySelectorAll('.qr-amount').forEach(el => {
     el.innerHTML = `¥${info.price} <small>元</small>`;
   });
+
+  // 更新支付提示文字，把价格写进去
+  const hintEl = modal.querySelector('.pay-hint');
+  if (hintEl) {
+    hintEl.innerHTML = `扫码时请备注金额 <strong>¥${info.price}</strong>，并截图发给客服<br>微信客服：<strong>newboy2004</strong>`;
+  }
 }
 
 function closePayModal() {
