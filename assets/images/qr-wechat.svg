@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <rect width="200" height="200" fill="white"/>
+  <!-- 定位角 左上 -->
+  <rect x="10" y="10" width="50" height="50" fill="#07C160" rx="4"/>
+  <rect x="18" y="18" width="34" height="34" fill="white" rx="2"/>
+  <rect x="24" y="24" width="22" height="22" fill="#07C160" rx="2"/>
+  <!-- 定位角 右上 -->
+  <rect x="140" y="10" width="50" height="50" fill="#07C160" rx="4"/>
+  <rect x="148" y="18" width="34" height="34" fill="white" rx="2"/>
+  <rect x="154" y="24" width="22" height="22" fill="#07C160" rx="2"/>
+  <!-- 定位角 左下 -->
+  <rect x="10" y="140" width="50" height="50" fill="#07C160" rx="4"/>
+  <rect x="18" y="148" width="34" height="34" fill="white" rx="2"/>
+  <rect x="24" y="154" width="22" height="22" fill="#07C160" rx="2"/>
+  <!-- 模拟数据点 -->
+  <rect x="72" y="10" width="8" height="8" fill="#07C160"/>
+  <rect x="84" y="10" width="8" height="8" fill="#07C160"/>
+  <rect x="72" y="22" width="8" height="8" fill="#07C160"/>
+  <rect x="84" y="34" width="8" height="8" fill="#07C160"/>
+  <rect x="96" y="22" width="8" height="8" fill="#07C160"/>
+  <rect x="108" y="10" width="8" height="8" fill="#07C160"/>
+  <rect x="120" y="22" width="8" height="8" fill="#07C160"/>
+  <rect x="10" y="72" width="8" height="8" fill="#07C160"/>
+  <rect x="22" y="84" width="8" height="8" fill="#07C160"/>
+  <rect x="34" y="72" width="8" height="8" fill="#07C160"/>
+  <rect x="46" y="84" width="8" height="8" fill="#07C160"/>
+  <rect x="58" y="72" width="8" height="8" fill="#07C160"/>
+  <rect x="72" y="72" width="8" height="8" fill="#07C160"/>
+  <rect x="84" y="84" width="8" height="8" fill="#07C160"/>
+  <rect x="96" y="72" width="8" height="8" fill="#07C160"/>
+  <rect x="108" y="84" width="8" height="8" fill="#07C160"/>
+  <rect x="120" y="72" width="8" height="8" fill="#07C160"/>
+  <rect x="132" y="84" width="8" height="8" fill="#07C160"/>
+  <rect x="72" y="96" width="8" height="8" fill="#07C160"/>
+  <rect x="96" y="96" width="8" height="8" fill="#07C160"/>
+  <rect x="120" y="96" width="8" height="8" fill="#07C160"/>
+  <rect x="84" y="108" width="8" height="8" fill="#07C160"/>
+  <rect x="108" y="108" width="8" height="8" fill="#07C160"/>
+  <rect x="132" y="108" width="8" height="8" fill="#07C160"/>
+  <rect x="72" y="120" width="8" height="8" fill="#07C160"/>
+  <rect x="84" y="132" width="8" height="8" fill="#07C160"/>
+  <rect x="96" y="120" width="8" height="8" fill="#07C160"/>
+  <rect x="108" y="132" width="8" height="8" fill="#07C160"/>
+  <rect x="120" y="120" width="8" height="8" fill="#07C160"/>
+  <rect x="132" y="132" width="8" height="8" fill="#07C160"/>
+  <rect x="72" y="144" width="8" height="8" fill="#07C160"/>
+  <rect x="84" y="156" width="8" height="8" fill="#07C160"/>
+  <rect x="96" y="144" width="8" height="8" fill="#07C160"/>
+  <rect x="108" y="168" width="8" height="8" fill="#07C160"/>
+  <rect x="120" y="156" width="8" height="8" fill="#07C160"/>
+  <rect x="132" y="144" width="8" height="8" fill="#07C160"/>
+  <rect x="144" y="72" width="8" height="8" fill="#07C160"/>
+  <rect x="156" y="84" width="8" height="8" fill="#07C160"/>
+  <rect x="168" y="72" width="8" height="8" fill="#07C160"/>
+  <rect x="180" y="84" width="8" height="8" fill="#07C160"/>
+  <rect x="144" y="96" width="8" height="8" fill="#07C160"/>
+  <rect x="168" y="108" width="8" height="8" fill="#07C160"/>
+  <rect x="180" y="96" width="8" height="8" fill="#07C160"/>
+  <rect x="156" y="120" width="8" height="8" fill="#07C160"/>
+  <rect x="144" y="132" width="8" height="8" fill="#07C160"/>
+  <rect x="168" y="120" width="8" height="8" fill="#07C160"/>
+  <rect x="10" y="96" width="8" height="8" fill="#07C160"/>
+  <rect x="22" y="108" width="8" height="8" fill="#07C160"/>
+  <rect x="34" y="96" width="8" height="8" fill="#07C160"/>
+  <rect x="46" y="108" width="8" height="8" fill="#07C160"/>
+  <rect x="58" y="96" width="8" height="8" fill="#07C160"/>
+  <rect x="10" y="120" width="8" height="8" fill="#07C160"/>
+  <rect x="34" y="132" width="8" height="8" fill="#07C160"/>
+  <rect x="46" y="120" width="8" height="8" fill="#07C160"/>
+  <rect x="10" y="144" width="8" height="8" fill="#07C160"/>
+  <rect x="22" y="156" width="8" height="8" fill="#07C160"/>
+  <rect x="34" y="144" width="8" height="8" fill="#07C160"/>
+  <rect x="46" y="168" width="8" height="8" fill="#07C160"/>
+  <rect x="58" y="144" width="8" height="8" fill="#07C160"/>
+  <!-- 标签 -->
+  <rect x="0" y="175" width="200" height="25" fill="#07C160"/>
+  <text x="100" y="192" text-anchor="middle" fill="white" font-family="Arial" font-size="13" font-weight="bold">微信扫码付款</text>
+</svg>
