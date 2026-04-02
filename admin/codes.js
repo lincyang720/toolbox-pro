@@ -14,16 +14,15 @@ window.CODES = {
   "disk-cleaner": {
     "DISK-DEMO-2024": {
       used: false,
-      download: "https://github.com/YOUR_USERNAME/toolbox-pro/releases/download/v1.0/磁盘清理工具.exe"
+      download: "https://github.com/lincyang720/toolbox-pro/releases/download/v1.0/disk-cleaner.exe"
     }
-    // 在这里继续添加新兑换码，复制上面一行粘贴修改即可
   },
 
   // MSI修复工具兑换码
   "msi-fixer": {
     "MSI-DEMO-2024": {
       used: false,
-      download: "https://github.com/YOUR_USERNAME/toolbox-pro/releases/download/v1.0/MSI修复工具.exe"
+      download: "https://github.com/lincyang720/toolbox-pro/releases/download/v1.0/msi-fixer.exe"
     }
   },
 
@@ -31,7 +30,7 @@ window.CODES = {
   "net-reset": {
     "NET-DEMO-2024": {
       used: false,
-      download: "https://github.com/YOUR_USERNAME/toolbox-pro/releases/download/v1.0/网络重置工具.exe"
+      download: "https://github.com/lincyang720/toolbox-pro/releases/download/v1.0/net-reset.exe"
     }
   },
 
@@ -39,7 +38,7 @@ window.CODES = {
   "startup-manager": {
     "BOOT-DEMO-2024": {
       used: false,
-      download: "https://github.com/YOUR_USERNAME/toolbox-pro/releases/download/v1.0/开机加速工具.exe"
+      download: "https://github.com/lincyang720/toolbox-pro/releases/download/v1.0/startup-manager.exe"
     }
   },
 
@@ -47,15 +46,15 @@ window.CODES = {
   "image-compressor": {
     "IMG-DEMO-2024": {
       used: false,
-      download: "https://github.com/YOUR_USERNAME/toolbox-pro/releases/download/v1.0/图片批量压缩工具.exe"
+      download: "https://github.com/lincyang720/toolbox-pro/releases/download/v1.0/image-compressor.exe"
     }
   },
 
-  // 全套工具包兑换码（包含全部工具下载链接）
+  // 全套工具包兑换码
   "bundle": {
     "BUNDLE-DEMO-2024": {
       used: false,
-      download: "https://github.com/YOUR_USERNAME/toolbox-pro/releases/download/v1.0/ToolBoxPro全套工具包.zip"
+      download: "https://github.com/lincyang720/toolbox-pro/releases/download/v1.0/disk-cleaner.exe"
     }
   }
 };
