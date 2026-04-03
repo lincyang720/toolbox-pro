@@ -46,7 +46,8 @@ window.CODES = {
   "image-compressor": {
     "IMG-DEMO-2024": {
       used: false,
-      download: "https://github.com/lincyang720/toolbox-pro/releases/download/latest-build/image-compressor.exe"
+      download: "https://github.com/lincyang720/toolbox-pro/releases/download/latest-build/image-compressor.exe",
+      downloadMac: "https://github.com/lincyang720/toolbox-pro/releases/download/latest-build/image-compressor-mac.zip"
     }
   },
 
@@ -54,7 +55,8 @@ window.CODES = {
   "snaptool": {
     "SNAP-DEMO-2024": {
       used: false,
-      download: "https://github.com/lincyang720/toolbox-pro/releases/download/latest-build/snaptool.exe"
+      download: "https://github.com/lincyang720/toolbox-pro/releases/download/latest-build/snaptool.exe",
+      downloadMac: "https://github.com/lincyang720/toolbox-pro/releases/download/latest-build/snaptool-mac.zip"
     }
   },
 

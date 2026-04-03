@@ -44,8 +44,8 @@ const PRODUCT_INFO = {
   'msi-fixer':       { name: 'MSI 修复工具',     price: '6.9'  },
   'net-reset':       { name: '网络重置工具',     price: '6.9'  },
   'startup-manager': { name: '开机加速工具',     price: '8.9'  },
-  'image-compressor':{ name: '图片批量压缩',     price: '9.9'  },
-  'snaptool':        { name: 'SnapTool 截图工具', price: '12.9' },
+  'image-compressor':{ name: '图片批量压缩',     price: '9.9',  hasMac: true },
+  'snaptool':        { name: 'SnapTool 截图工具', price: '12.9', hasMac: true },
   'bundle':          { name: '全套工具包',       price: '29.9' },
 };
 
@@ -133,8 +133,27 @@ function verifyCode() {
   errEl.classList.remove('show');
   codes[input].used = true;
 
+  const info = PRODUCT_INFO[currentProduct] || {};
   const dlBtn = document.getElementById('download-btn');
-  dlBtn.href = codes[input].download;
+  const dlBox = document.getElementById('download-box-inner');
+
+  if (info.hasMac && codes[input].downloadMac) {
+    // 双平台：替换下载区域为两个按钮
+    const macUrl = codes[input].downloadMac;
+    const winUrl = codes[input].download;
+    dlBox.innerHTML = `
+      <div class="success-icon">🎉</div>
+      <h4>验证成功！</h4>
+      <p>请选择你的操作系统版本下载</p>
+      <a href="${winUrl}" class="btn btn-download btn-full" style="margin-bottom:8px">⬇ Windows 版 (.exe)</a>
+      <a href="${macUrl}" class="btn btn-download btn-full" style="background:#555">⬇ macOS 版 (.zip)</a>
+      <p style="font-size:12px;color:var(--text-muted);margin-top:10px;margin-bottom:0">遇到问题请联系客服</p>
+    `;
+  } else {
+    // 单平台：沿用原有按钮
+    dlBtn.href = codes[input].download;
+  }
+
   setPayStep(3);
 }
 
