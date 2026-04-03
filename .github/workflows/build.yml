@@ -47,13 +47,18 @@ jobs:
             --hidden-import win32clipboard `
             snaptool.py
 
+      - name: Collect Windows artifacts
+        shell: cmd
+        run: |
+          mkdir dist-win
+          copy tools\image-compressor\dist\image-compressor.exe dist-win\
+          copy tools\snaptool\dist\snaptool.exe dist-win\
+
       - name: Upload Windows artifacts
         uses: actions/upload-artifact@v4
         with:
           name: windows-exes
-          path: |
-            tools/image-compressor/dist/image-compressor.exe
-            tools/snaptool/dist/snaptool.exe
+          path: dist-win\
 
   # ── macOS 构建 ────────────────────────────────
   build-macos:
@@ -94,13 +99,17 @@ jobs:
           # 打包成 zip 方便下载
           cd dist && zip -r snaptool-mac.zip snaptool.app
 
+      - name: Collect macOS artifacts
+        run: |
+          mkdir -p dist-mac
+          cp tools/image-compressor/dist/image-compressor-mac.zip dist-mac/
+          cp tools/snaptool/dist/snaptool-mac.zip dist-mac/
+
       - name: Upload macOS artifacts
         uses: actions/upload-artifact@v4
         with:
           name: macos-apps
-          path: |
-            tools/image-compressor/dist/image-compressor-mac.zip
-            tools/snaptool/dist/snaptool-mac.zip
+          path: dist-mac/
 
   # ── 发布到 GitHub Releases ────────────────────
   release:
