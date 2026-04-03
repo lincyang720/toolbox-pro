@@ -50,6 +50,14 @@ window.CODES = {
     }
   },
 
+  // SnapTool 截图工具兑换码
+  "snaptool": {
+    "SNAP-DEMO-2024": {
+      used: false,
+      download: "https://github.com/lincyang720/toolbox-pro/releases/download/v1.0/snaptool.exe"
+    }
+  },
+
   // 全套工具包兑换码
   "bundle": {
     "BUNDLE-DEMO-2024": {

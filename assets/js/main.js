@@ -40,12 +40,13 @@ function makePlaceholderQR(canvas, label, color) {
 let currentProduct = null;
 
 const PRODUCT_INFO = {
-  'disk-cleaner':    { name: '磁盘清理工具',   price: '9.9'  },
-  'msi-fixer':       { name: 'MSI 修复工具',   price: '6.9'  },
-  'net-reset':       { name: '网络重置工具',   price: '6.9'  },
-  'startup-manager': { name: '开机加速工具',   price: '8.9'  },
-  'image-compressor':{ name: '图片批量压缩',   price: '9.9'  },
-  'bundle':          { name: '全套工具包',     price: '29.9' },
+  'disk-cleaner':    { name: '磁盘清理工具',     price: '9.9'  },
+  'msi-fixer':       { name: 'MSI 修复工具',     price: '6.9'  },
+  'net-reset':       { name: '网络重置工具',     price: '6.9'  },
+  'startup-manager': { name: '开机加速工具',     price: '8.9'  },
+  'image-compressor':{ name: '图片批量压缩',     price: '9.9'  },
+  'snaptool':        { name: 'SnapTool 截图工具', price: '12.9' },
+  'bundle':          { name: '全套工具包',       price: '29.9' },
 };
 
 function openPayModal(productId) {
