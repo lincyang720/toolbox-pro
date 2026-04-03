@@ -9,3 +9,6 @@ desktop.ini
 
 # Node（如果后续用构建工具）
 node_modules/
+
+# 管理面板（仅本地使用，不推送到公开仓库）
+admin/index.html
