@@ -1,0 +1,140 @@
+name: Build Tools
+
+on:
+  push:
+    branches: [ master, main ]
+    paths:
+      - 'tools/**'
+      - '.github/workflows/build.yml'
+  workflow_dispatch:
+
+jobs:
+  # ── Windows 构建 ──────────────────────────────
+  build-windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      # ── image-compressor (Windows) ──
+      - name: Install image-compressor deps
+        run: pip install -r tools/image-compressor/requirements.txt
+
+      - name: Build image-compressor.exe
+        working-directory: tools/image-compressor
+        run: |
+          pyinstaller --onefile --windowed --clean `
+            --name image-compressor `
+            image_compressor.py
+
+      # ── snaptool (Windows) ──
+      - name: Install snaptool deps
+        run: pip install -r tools/snaptool/requirements-win.txt
+
+      - name: Build snaptool.exe
+        working-directory: tools/snaptool
+        run: |
+          pyinstaller --onefile --windowed --clean `
+            --name snaptool `
+            --hidden-import pynput.keyboard._win32 `
+            --hidden-import pynput.mouse._win32 `
+            --hidden-import win32api `
+            --hidden-import win32con `
+            --hidden-import win32clipboard `
+            snaptool.py
+
+      - name: Upload Windows artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: windows-exes
+          path: |
+            tools/image-compressor/dist/image-compressor.exe
+            tools/snaptool/dist/snaptool.exe
+
+  # ── macOS 构建 ────────────────────────────────
+  build-macos:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      # ── image-compressor (macOS) ──
+      - name: Install image-compressor deps
+        run: pip install -r tools/image-compressor/requirements.txt
+
+      - name: Build image-compressor (macOS)
+        working-directory: tools/image-compressor
+        run: |
+          pyinstaller --onefile --windowed --clean \
+            --name image-compressor \
+            image_compressor.py
+          # 打包成 zip 方便下载
+          cd dist && zip -r image-compressor-mac.zip image-compressor.app
+
+      # ── snaptool (macOS) ──
+      - name: Install snaptool deps
+        run: pip install -r tools/snaptool/requirements-mac.txt
+
+      - name: Build snaptool (macOS)
+        working-directory: tools/snaptool
+        run: |
+          pyinstaller --onefile --windowed --clean \
+            --name snaptool \
+            --hidden-import pynput.keyboard._darwin \
+            --hidden-import pynput.mouse._darwin \
+            snaptool_mac.py
+          # 打包成 zip 方便下载
+          cd dist && zip -r snaptool-mac.zip snaptool.app
+
+      - name: Upload macOS artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: macos-apps
+          path: |
+            tools/image-compressor/dist/image-compressor-mac.zip
+            tools/snaptool/dist/snaptool-mac.zip
+
+  # ── 发布到 GitHub Releases ────────────────────
+  release:
+    needs: [build-windows, build-macos]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download Windows artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: windows-exes
+          path: dist/windows
+
+      - name: Download macOS artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: macos-apps
+          path: dist/macos
+
+      - name: Get short SHA
+        id: sha
+        run: echo "short=$(echo $GITHUB_SHA | cut -c1-7)" >> $GITHUB_OUTPUT
+
+      - name: Create or update release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: latest-build
+          name: "Latest Build (${{ steps.sha.outputs.short }})"
+          prerelease: true
+          files: |
+            dist/windows/image-compressor.exe
+            dist/windows/snaptool.exe
+            dist/macos/image-compressor-mac.zip
+            dist/macos/snaptool-mac.zip
