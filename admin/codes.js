@@ -4,7 +4,7 @@
  * 使用方法：
  *   1. 用户付款后，你发给他一个兑换码
  *   2. 在下方对应产品的数组里添加新兑换码
- *   3. 推送到 GitHub 即可生效（Vercel 自动部署）
+ *   3. 推送到 GitHub 即可生效
  *
  * 格式：
  *   "兑换码": { used: false, download: "下载链接" }
@@ -46,7 +46,7 @@ window.CODES = {
   "image-compressor": {
     "IMG-DEMO-2024": {
       used: false,
-      download: "https://github.com/lincyang720/toolbox-pro/releases/download/v1.0/image-compressor.exe"
+      download: "https://github.com/lincyang720/toolbox-pro/releases/download/latest-build/image-compressor.exe"
     }
   },
 
@@ -54,7 +54,7 @@ window.CODES = {
   "snaptool": {
     "SNAP-DEMO-2024": {
       used: false,
-      download: "https://github.com/lincyang720/toolbox-pro/releases/download/v1.0/snaptool.exe"
+      download: "https://github.com/lincyang720/toolbox-pro/releases/download/latest-build/snaptool.exe"
     }
   },
 
